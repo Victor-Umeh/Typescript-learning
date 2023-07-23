@@ -1,0 +1,41 @@
+.input {
+  position: relative;
+  width: 90%;
+  display: flex;
+  max-width: 600px;
+}
+.input__box {
+  width: 100%;
+  padding: 1.5rem 3rem;
+  border-radius: 5rem;
+  border: none;
+  font-size: 2.5rem;
+}
+
+.input__box:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0 6px 2rem rgb(0, 0, 0, 0.4);
+}
+.input__btn {
+  position: absolute;
+  width: 4.5rem;
+  aspect-ratio: 1;
+  right: 0;
+  margin: 0.8rem;
+  border-radius: 50%;
+  border: 1px solid lightgrey;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: teal;
+  color: white;
+  cursor: pointer;
+  transition: transform 300ms;
+}
+.input__btn:hover,
+.input__btn:active,
+.input__btn:focus {
+  transform: scale(0.9);
+  outline: 1px solid grey;
+  border: none;
+}
