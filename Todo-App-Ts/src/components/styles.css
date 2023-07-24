@@ -1,15 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .input {
   position: relative;
   width: 90%;
   display: flex;
   max-width: 600px;
+  position: relative;
 }
+
 .input__box {
   width: 100%;
   padding: 1.5rem 3rem;
   border-radius: 5rem;
   border: none;
   font-size: 2.5rem;
+  /* z-index: 1; */
 }
 
 .input__box:focus {
@@ -17,6 +25,7 @@
   outline: none;
   box-shadow: 0 6px 2rem rgb(0, 0, 0, 0.4);
 }
+
 .input__btn {
   position: absolute;
   width: 4.5rem;
@@ -31,6 +40,7 @@
   color: white;
   cursor: pointer;
   transition: transform 300ms;
+  /* z-index: 1; */
 }
 .input__btn:hover,
 .input__btn:active,
@@ -38,4 +48,22 @@
   transform: scale(0.9);
   outline: 1px solid grey;
   border: none;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  color: white;
+  width: 90%;
+  max-width: 530px;
+  margin-top: 1.5rem;
+}
+.item {
+  width: 100%;
+  font-size: 1.8rem;
+  background: tomato;
+  padding: 2rem;
+  list-style: none;
 }
