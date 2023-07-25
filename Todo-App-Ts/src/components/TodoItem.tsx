@@ -17,7 +17,10 @@ const TodoItem = ({ todo, todos, setTodos }: Props) => {
       )
     );
   };
-  // console.log(todos);
+
+  const handleDelete = (id: number) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
 
   return (
     <form className="todo__item">
@@ -38,7 +41,7 @@ const TodoItem = ({ todo, todos, setTodos }: Props) => {
             }}
           />
         </span>
-        <span>
+        <span onClick={() => handleDelete(todo.id)}>
           <AiFillDelete
             style={{
               padding: ".3rem",
