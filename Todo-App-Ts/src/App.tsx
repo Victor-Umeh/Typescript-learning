@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Todo } from "./model";
-import "./index.css";
 import InputField from "./components/InputField";
 import TodoList from "./components/TodoList";
 
