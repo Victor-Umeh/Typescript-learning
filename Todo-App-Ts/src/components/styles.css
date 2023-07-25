@@ -1,12 +1,13 @@
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
-  background: teal;
+  background: #396775;
 }
 .input {
   position: relative;
   width: 90%;
   display: flex;
+  align-items: center;
   max-width: 600px;
   position: relative;
 }
@@ -16,14 +17,13 @@ body {
   padding: 1.5rem 3rem;
   border-radius: 5rem;
   border: none;
-  font-size: 2.5rem;
-  /* z-index: 1; */
+  font-size: 2rem;
 }
 
 .input__box:focus {
   border: none;
   outline: none;
-  box-shadow: 0 6px 2rem rgb(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px 600px rgba(0, 0, 0, 0.5);
 }
 
 .input__btn {
@@ -31,22 +31,20 @@ body {
   width: 4.5rem;
   aspect-ratio: 1;
   right: 0;
-  margin: 0.8rem;
+  margin: 0.5rem;
   border-radius: 50%;
-  border: 1px solid lightgrey;
   font-size: 1.5rem;
   font-weight: bold;
-  background: teal;
+  background: #396775;
   color: white;
   cursor: pointer;
+  border: none;
   transition: transform 300ms;
-  /* z-index: 1; */
 }
 .input__btn:hover,
 .input__btn:active,
 .input__btn:focus {
   transform: scale(0.9);
-  outline: 1px solid grey;
   border: none;
 }
 
@@ -65,7 +63,6 @@ body {
 .item {
   width: 100%;
   font-size: 1.8rem;
-  background: tomato;
   padding: 2rem;
   list-style: none;
 }
@@ -88,4 +85,14 @@ body {
 
 .todo__item-text--isDone {
   text-decoration: line-through;
+}
+
+.edit__input {
+  /* background: transparent; */
+  border: none;
+  outline: none;
+  padding: 1.5rem 0;
+  font-size: 1.7rem;
+  font-weight: 600;
+  flex: 1;
 }

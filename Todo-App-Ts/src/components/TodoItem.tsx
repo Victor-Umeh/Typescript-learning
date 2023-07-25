@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Todo } from ".././model";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
@@ -10,6 +11,9 @@ interface Props {
 }
 
 const TodoItem = ({ todo, todos, setTodos }: Props) => {
+  const [edit, setEdit] = useState<boolean>(false);
+  const [editTodo, setEditTodo] = useState<string>(todo.todo);
+
   const handleDone = (id: number) => {
     setTodos(
       todos.map((todo) =>
@@ -17,21 +21,40 @@ const TodoItem = ({ todo, todos, setTodos }: Props) => {
       )
     );
   };
-
   const handleDelete = (id: number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
+  const handleEdit = () => {
+    if (!edit && !todo.isDone) {
+      setEdit(!edit);
+    }
+  };
+  const handleChange = (e: React.FormEvent, id: number) => {
+    e.preventDefault();
+
+    setTodos(
+      todos.map((todo) => (todo.id === id ? { ...todo, todo: editTodo } : todo))
+    );
+    setEdit(false);
+  };
 
   return (
-    <form className="todo__item">
-      {todo.isDone ? (
+    <form className="todo__item" onSubmit={(e) => handleChange(e, todo.id)}>
+      {edit ? (
+        <input
+          type="text"
+          className="edit__input"
+          value={editTodo}
+          onChange={(e) => setEditTodo(e.target.value)}
+        />
+      ) : todo.isDone ? (
         <p className="todo__item-text todo__item-text--isDone">{todo.todo}</p>
       ) : (
         <p className="todo__item-text">{todo.todo}</p>
       )}
 
       <div>
-        <span>
+        <span onClick={handleEdit}>
           <AiFillEdit
             style={{
               padding: ".3rem",

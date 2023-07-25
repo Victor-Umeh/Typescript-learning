@@ -10,4 +10,5 @@
 .header__h1 {
   color: white;
   font-size: 4.4rem;
+  z-index: 10;
 }
